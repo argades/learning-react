@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<!-- This is what supports JSX compilation (and other transformations) -->
+<script src="https://unpkg.com/@babel/standalone@7.10.3/babel.min.js"></script>
+         
+<!-- These are for React -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/17.0.2/umd/react.development.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.2/umd/react-dom.development.js"></script>
+ 
+    <title>ReactApp</title>
+</head>
+<body>
+
+    <div id="root"></div>
+
+    <script type="text/babel" data-presets="react,stage-3">
+        
+        const divRoot = document.querySelector('#root');
+        const h1tag = <h1>Hola Mundo </h1>;
+
+        ReactDOM.render (h1tag,divRoot);
+
+    </script>
+        
+</body>
+</html>
