@@ -5,11 +5,11 @@ export const GifExpertApp = () => {
 
   const [categories, setCategories] = useState(['Thunder']);
 
-  const onAddCategory = ( event ) => {
-    console.log(event.target);
-    const categ = [...categories, event.target.value];
-    setCategories(categ);
-  }
+  // const onAddCategory = ( event ) => {
+  //   console.log(event.target);
+  //   const categ = [...categories, event.target.value];
+  //   setCategories(categ);
+  // }
 
   return (
     <>
@@ -17,10 +17,9 @@ export const GifExpertApp = () => {
       <h1>GifExpertApp</h1>
 
       {/* Input */}
-      <AddCategory/>
-      
+      <AddCategory setCategories={ setCategories }/>
+
       {/* Listado */}
-      <button onClick={(event) => onAddCategory(event) }>Add category</button>
       <ol>
         { 
           categories.map( category => {
