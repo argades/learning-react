@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { getGif } from "../helper/getGifs";
+import { useFetchGifs } from "../hooks/useFetchGifs";
+import { GifItem } from "./GifItem";
 
 /**
  * 
@@ -8,33 +8,22 @@ import { getGif } from "../helper/getGifs";
  */
 export const GifGrid = ( { category } ) => {
 
-  const [images, setImages] = useState([]);
-  
-  const getImages = async () => {
-    const newImages = await getGif(category);
-    
-    console.log(newImages);
-
-    setImages(newImages);
-  }
-
-  useEffect( () => {
-    getImages();
-  }, []);
+  const { images, isLoading } = useFetchGifs( category );
 
   return (
     <>
       <h3>{ category }</h3>
 
-      <ol>
+      <div className="card-grid">
         {
-          images.map(({id, title}) => {
-            return (
-              <li key={ id }>{ title }</li>
-            )
-          })
+          images.map(( image ) => (
+            <GifItem 
+              key={ image.id }
+              { ...image }
+            />
+          ))
         }
-      </ol>
+      </div>
     </>
   )
 }
