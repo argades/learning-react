@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing <GifItem/> should test snapshot 1`] = `
+<div>
+  <div
+    class="card"
+  >
+    <p>
+      Title gif
+    </p>
+    <img
+      alt="Title gif"
+      src="http://thunder-cats.com/alan"
+    />
+  </div>
+</div>
+`;
+
+exports[`Testing <GifItem/> should test title and url required 1`] = `
+<div>
+  <div
+    class="card"
+  >
+    <p />
+    <img />
+  </div>
+</div>
+`;
