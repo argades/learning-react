@@ -1,13 +1,11 @@
 import { useState } from "react";
-import { AddCategory } from "./components/AddCategory";
-import { GifGrid } from "./components/GifGrid";
+import { AddCategory, GifGrid } from "./components";
 
 export const GifExpertApp = () => {
 
-  const [categories, setCategories] = useState([]);
+  const [categories, setCategories] = useState(['Happy Dogs AI']);
 
   const onAddCategory = ( newCategory ) => {
-    //console.log(newCategory);
     const isExist = categories.filter( c => c.toUpperCase() === newCategory.toUpperCase()).length > 0;
 
     if(isExist){
