@@ -25,7 +25,7 @@ describe('Testing custom hooks useFetchGif', () => {
 
     const { images, isLoading } = result.current;
     
-    // Validar el estado inicial
+    // Validar el estado final
     expect( images.length ).toBeGreaterThan(0);
     expect( isLoading ).toBeFalsy();
 
